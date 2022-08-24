@@ -19,9 +19,29 @@ namespace ConsoleApplication
         /// </summary>
         public static void Main()
         {
-            var train = new Train();
-            train.StartEngines();
-            Console.WriteLine("Hello World!");
+             for (int i=0; i<100; i++)//iteración para que cree 100 instancias
+            {
+                string j = i.ToString();  //creo una variable para crear nuevas intancias
+                new Train(j); //creo instancia
+            }
+
+            Console.WriteLine($"Existen {Train.Count} instancias de objetos.");
+
+            for (int i=0; i<(10000000); i++) //itero para que cree 10000000 instancias
+            {
+                string j = i.ToString();
+                new Train(j);
+            }
+            Console.WriteLine($"Existen {Train.Count} instancias de objetos.\n");
+
+            /// Parte 8 y 9
+            
+            Train t1 = new Train("Last Train To London");
+            Train t2 = new Train("Last Train To London");
+            Train t3 = new Train("Runaway Train");
+            Console.WriteLine($"t1==t2 tiene el valor bool: {t1==t2}");
+            Console.WriteLine($"t2==t3 tiene el valor bool: {t2==t3}");
+            
         }
     }
 }
